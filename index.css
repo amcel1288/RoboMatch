@@ -1,0 +1,50 @@
+body{
+	background: url(skin2.jpg) no-repeat center center fixed;
+	background-size: cover;
+	font-family: 'Orbitron', sans-serif;
+
+}
+input{
+	height: 150px;
+	width: 450px;
+	font-size: 50px;
+	background: url(red.png);
+}
+#button:focus {
+	outline: none;
+}
+.red-circle-button {
+	box-shadow: 2px 4px 0 2px rgba(0,0,0,0.1);
+	border: .5em solid white;
+	font-size: 1em;
+	line-height: 1.1em;
+	color: #ffffff;
+	background-color: #d8db25;
+	margin: auto;
+	border-radius: 50%;
+	height: 20em;
+	width: 20em;
+	position: relative;
+}
+.red-circle-button:hover {
+	color:#ffffff;
+    background-color: #0ed11e;
+	text-decoration: none;
+	border-color: white;
+	
+}
+.red-circle-button:visited {
+	color:#ffffff;
+    background-color: #e84d0e;
+	text-decoration: none;
+	
+}
+.red-circle-link-greater-than {
+    font-size: 1em;
+}
+textarea {
+    resize: none;
+    background:url(maxresdefault.jpg);
+    background-size: 100% 100%;
+    color: white;
+}

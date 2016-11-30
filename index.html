@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html ng-app="app">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Robo Match</title>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="bower_components/angular-toastr/dist/angular-toastr.css">
+    <link href="https://fonts.googleapis.com/css?family=Orbitron" rel="stylesheet">
+    <link rel="stylesheet" href="index.css">
+</head>
+
+<body ng-controller="RoboMatchController as robo">
+    <div ng-show="robo.catHide">
+        <img ng-src="{{robo.catImage.source}}" ng-show="robo.catHide">
+    </div>
+    <div ng-hide="robo.catHide">
+        <h1 class="text-center">Robo Match</h1>
+        <h3 class="text-center">Robots MADE together STAY together</h3>
+        <div class="container">
+            <div class="row" style="margin-top: 30px;">
+                <div align="center" class="col-sm-6">
+                    <input class="text-center" ng-model="name1" placeholder="input name 1" type="text">
+                </div>
+                <div align="center" class="col-sm-6">
+                    <input class="text-center" ng-model="name2" placeholder="input name 2" type="text">
+                </div>
+            </div>
+            <div class="row" align="center" style="margin-top: 50px;">
+                <button id="button" class="btn btn-danger red-circle-button btn-lg" ng-click="robo.buttonClick(name1, name2)">Compute
+                    <br>
+                    <br>RoboCompatibility</button>
+            </div>
+            <!--below is pre submit item-->
+            <div style="margin-top: 80px;" class="row" align="center" ng-hide="robo.hide">
+                <textarea style="font-size: 30px" readonly rows="5" cols="41">Here at Robo Match, we pride ourselves in our ability to evaluate the compatibility of our future inorganic selves. We bring the most advanced robot compatibility algorithms to you and your future robot partner in a simple, easy to use layout.</textarea>
+            </div>
+            <!--below is post submit item-->
+            <div style="margin-top: 50px; font-size: 30px;" align="center" class="row" ng-show="robo.hide">
+                <div id="avatars">
+                    <div align="center" id="result">
+                        {{robo.match}}
+                    </div>
+                    <div class="col-sm-6">
+                        <img ng-src="{{robo.avatar1.imageUrl}}" alt="">
+                        <p></p>
+                    </div>
+                    <div class="col-sm-6">
+                        <img ng-src="{{robo.avatar2.imageUrl}}" alt="">
+                        <p></p>
+                    </div>
+                </div>
+                <button ng-click="robo.catClick()">Secret Dangerous Cat Button</button>
+            </div>
+        </div>
+    </div>
+    <!-- jQuery -->
+    <script src="//code.jquery.com/jquery.js"></script>
+    <!-- Bootstrap JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+    <script src="bower_components/angular/angular.js"></script>
+    <script src="bower_components/angular-toastr/dist/angular-toastr.tpls.js"></script>
+    <script src="app/app.module.js"></script>
+    <script src="app/core/numbers.factory.js"></script>
+    <script src="app/core/robot.factory.js"></script>
+    <script src="app/core/cat.factory.js"></script>
+    <script src="app/core/roboMatch/roboMatch.controller.js"></script>
+</body>
+
+</html>
